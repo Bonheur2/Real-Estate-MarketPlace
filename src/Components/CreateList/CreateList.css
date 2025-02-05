@@ -1,0 +1,30 @@
+.create-list {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .create-list form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-list form div {
+    margin-bottom: 15px;
+  }
+  
+  .create-list input, .create-list textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .create-list button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
