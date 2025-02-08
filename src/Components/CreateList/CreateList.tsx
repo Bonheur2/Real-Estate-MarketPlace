@@ -1,55 +1,47 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './CreateList.css';
+import { useState } from "react";
+import "./CreateList.css";
 
-export function CreateList() {
-  const navigate = useNavigate();
+interface CreateListProps {
+  onAddListing: (newListing: any) => void;
+}
 
-  const [formData, setFormData] = useState({
-    title: '',
-    price: '',
-    location: '',
-    description: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+export function CreateList({ onAddListing }: CreateListProps) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [location, setLocation] = useState("");
+  const [image, setImage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    // Here you would typically send the form data to a server.
 
-    // Navigate back to home after submitting
-    navigate('/');
+    const newListing = {
+      id: Date.now(),
+      title,
+      description,
+      price: Number(price),
+      location,
+      image,
+    };
+
+    onAddListing(newListing);
+    setTitle("");
+    setDescription("");
+    setPrice("");
+    setLocation("");
+    setImage("");
   };
 
   return (
-    <div className="create-list">
+    <div className="create-list-container">
       <h2>Create a New Listing</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label>
-          <input type="text" name="title" value={formData.title} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Price</label>
-          <input type="number" name="price" value={formData.price} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Location</label>
-          <input type="text" name="location" value={formData.location} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea name="description" value={formData.description} onChange={handleChange}></textarea>
-        </div>
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
+        <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} required />
+        <input type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} required />
+        <button type="submit">Add Listing</button>
       </form>
     </div>
   );

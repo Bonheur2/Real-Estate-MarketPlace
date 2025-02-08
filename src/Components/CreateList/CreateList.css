@@ -1,30 +1,50 @@
-.create-list {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .create-list form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .create-list form div {
-    margin-bottom: 15px;
-  }
-  
-  .create-list input, .create-list textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  .create-list button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+.create-list-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.create-list-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.create-list-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-list-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.create-list-container input:focus {
+  outline: none;
+  border-color: #ffffff; /* Highlight border when input is active */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.create-list-container button {
+  background-color: #a1a0a2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.create-list-container button:hover {
+  background-color: #9b92a2;
+}
