@@ -1,0 +1,38 @@
+.terms-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .terms-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    color: #4A0887;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  
+  .terms-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+  }
+  
